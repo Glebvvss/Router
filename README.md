@@ -30,13 +30,13 @@ Clone this repository to your project for using routing system
 
 #### Examples
 
-    //example of simple route <br>
+    //example of simple route
     Router::regRoute('/simple/route/without/GET/params', 'Namespace\Of\UsingClass\ClassName->classMethod');
 
-    //example of route with required GET params <br>
+    //example of route with required GET params
     Router::regRoute('/route/with/#~requiredGetParam#', 'Namespace\Of\UsingClass\ClassName->classMethod');
 
-    //example of route with optional GET params <br>
+    //example of route with optional GET params
     Router::regRoute('/route/with/#~optionalGetParam;opt#', 'Namespace\Of\UsingClass\ClassName->classMethod');
 
 <hr>
@@ -49,16 +49,19 @@ You can launch Router with the help of class named Service\Router\Router or Serv
     //Base launch where routes ragistrated in the index file above runner<br>
     (new Router())->run();
   
+  
     //If you need include external file of registration routing you can do this as follows:
     (new Router())
         ->addSourceRoutes('path/to/external/file/with/registration/routes/from/the/DOCUMENT_ROOT/directory')
         ->run();        
+  
   
     //Also you can include more than one external files of registration routing if you can do this as follows:
     (new Router())
         ->addSourceRoutes('path/to/external/file/with/registration/routes/from/the/DOCUMENT_ROOT/directory')
         ->addSourceRoutes('path/to/another/external/file/with/registration/routes/from/the/DOCUMENT_ROOT/directory')
         ->run();
+
 
     //If you need change base directory for external files of registration routing you can do this as follows:
     (new Router())
@@ -72,15 +75,16 @@ You can launch Router with the help of class named Service\Router\Router or Serv
 
     RouterFacade::init() return object of class Router
   
-Also **RouterFacade::init()** contain **__callStatic** magic method, which allows use all public methods of **Router** object through static calls
+Also **RouterFacade::init()** contains **__callStatic** magic method, which allows use all public methods of **Router** object through static calls
 
-#### Example
+#### Examples
 
     //Simple lauch
     RouterFacade::init()->run();
     //or
     RouterFacade::run();
-  
+   
+   
     //Lauch with external file of route registration
     RouterFacade::init()
         ->addSourceRoutes('path/to/external/file/for/routes/registration')
@@ -88,7 +92,8 @@ Also **RouterFacade::init()** contain **__callStatic** magic method, which allow
     //or
     RouterFacade::addSourceRoutes('path/to/external/file/for/routes/registration')->run();
    
-    //Lauch with external file of route registration and rebase of route registration files<br>
+   
+    //Lauch with external file of route registration and rebase of route registration files
     RouterFacade::init()
         ->setRootDirectory('path/to/directory/of/external/files/of/routing')
         ->addSourceRoutes('path/to/external/file/for/routes/registration')

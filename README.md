@@ -63,7 +63,7 @@ This is my realization of routing system for websites. The system is similar to 
 </p>
 
 <p>
-  Also you can include more than one external files of registration routing you can do this as follows: <br>
+  Also you can include more than one external files of registration routing if you can do this as follows: <br>
     <b>(new Router())<br>
         &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->addSourceRoutes('path/to/external/file/with/registration/routes/from/the/DOCUMENT_ROOT/directory')<br>
         &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->addSourceRoutes('path/to/another/external/file/with/registration/routes/from/the/DOCUMENT_ROOT/directory')<br>

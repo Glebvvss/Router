@@ -71,11 +71,9 @@ You can launch Router with the help of class named Service\Router\Router or Serv
 
 #### Running via the Service\Router\RouterFacade
 
-Launching **Router** through **RouterFacade** class is very similar on standard launching through **Router**, but have some differences
+Launching **Router** through **RouterFacade** class is very similar on standard launching through **Router**, but have some differences.
 
-    RouterFacade::init() return object of class Router
-  
-Also **RouterFacade::init()** contains **__callStatic** magic method, which allows use all public methods of **Router** object through static calls
+**RouterFacade::init()** return object of class **Router**. Also **RouterFacade::init()** contains **__callStatic** magic method, which allows use all public methods of **Router** object through static calls
 
 #### Examples
 

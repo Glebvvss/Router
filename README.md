@@ -49,8 +49,6 @@ You can launch Router with the help of class named Service\Router\Router or Serv
     //Base launch where routes ragistrated in the index file above runner<br>
     (new Router())->run();
   
-  <br>
-  
     //If you need include external file of registration routing you can do this as follows:
     (new Router())
         ->addSourceRoutes('path/to/external/file/with/registration/routes/from/the/DOCUMENT_ROOT/directory')
@@ -82,8 +80,6 @@ Also **RouterFacade::init()** contain **__callStatic** magic method, which allow
     RouterFacade::init()->run();
     //or
     RouterFacade::run();
-    
-<br>
   
     //Lauch with external file of route registration
     RouterFacade::init()
@@ -91,9 +87,7 @@ Also **RouterFacade::init()** contain **__callStatic** magic method, which allow
         ->run();
     //or
     RouterFacade::addSourceRoutes('path/to/external/file/for/routes/registration')->run();
-    
-<br>
-
+   
     //Lauch with external file of route registration and rebase of route registration files<br>
     RouterFacade::init()
         ->setRootDirectory('path/to/directory/of/external/files/of/routing')
@@ -103,5 +97,3 @@ Also **RouterFacade::init()** contain **__callStatic** magic method, which allow
     RouterFacade::setRootDirectory('path/to/directory/of/external/files/of/routing')
         ->addSourceRoutes('path/to/external/file/for/routes/registration')
         ->run();
-        
-<br>

@@ -63,7 +63,15 @@ This is my realization of routing system for websites. The system is similar to 
 </p>
 
 <p>
-  If you need change base directory for external file of registration routing you can do this as follows: <br>
+  Also you can include more than one external files of registration routing you can do this as follows: <br>
+    <b>(new Router())<br>
+        &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->addSourceRoutes('path/to/external/file/with/registration/routes/from/the/DOCUMENT_ROOT/directory')<br>
+        &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->addSourceRoutes('path/to/another/external/file/with/registration/routes/from/the/DOCUMENT_ROOT/directory')<br>
+        &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->run();</b>
+</p>
+
+<p>
+  If you need change base directory for external files of registration routing you can do this as follows: <br>
     <b>(new Router())<br>
         &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->setRootDirectory('path/to/directory/of/external/files/of/routing')<br>
         &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->addSourceRoutes('path/to/external/file/with/registration/routes/from/RootDirectory')<br>

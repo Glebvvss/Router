@@ -51,18 +51,19 @@ This is my realization of routing system for websites. The system is similar to 
 <p>You can launch Router with the help of class named Service\Router\Router or Service\Router\RouterFacade</p>
 
 <h5>The syntax for running via the Service\Router\Router</h5>
+<br>
 <p>
   <b>(new Router())->run();</b>
 </p>
 <p>
-  If you need include external file of registration routing you can do this as follows: <br>
+  If you need include external file of registration routing you can do this as follows: <br><br>
     <b>(new Router())<br>
         &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->addSourceRoutes('path/to/external/file/with/registration/routes/from/the/DOCUMENT_ROOT/directory')<br>
         &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->run();</b>
 </p>
 
 <p>
-  If you need change base directory for external file of registration routing you can do this as follows: <br>
+  If you need change base directory for external file of registration routing you can do this as follows: <br><br>
     <b>(new Router())<br>
         &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->setRootDirectory('path/to/directory/of/external/files/of/routing')<br>
         &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->addSourceRoutes('path/to/external/file/with/registration/routes/from/RootDirectory')<br>

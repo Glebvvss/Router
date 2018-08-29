@@ -27,9 +27,24 @@ This is my realization of routing system for websites. The system is similar to 
 
 <p>
   <b>$classAndMEthodOfcontroller</b> - full name of class with namespace and method of this class. <br>
-  <b>-></b> - separator, which whire between class name and method name
+  <b>-></b> - separator, which white between class name and method name
 </p>
 
 <h5>Example</h5>
+<p>
+  //example of simple route <br>
+  Router::regRoute('/simple/route/without/GET/params', 'Namespace\Of\UsingClass\ClassName->classMethod');
+</p>
 
-Router::regRoute($routeTpl, $classAndMEthodOfcontroller);
+<p>
+  //example of route with required GET params <br>
+  Router::regRoute('/route/with/#~requiredGetParam#', 'Namespace\Of\UsingClass\ClassName->classMethod');
+</p>
+
+<p>
+  //example of route with optional GET params <br>
+  Router::regRoute('/route/with/#~requiredGetParam;opt#', 'Namespace\Of\UsingClass\ClassName->classMethod');
+</p>
+<hr>
+
+<h3><b>Step 3: launching the router</b></h3>

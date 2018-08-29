@@ -67,7 +67,7 @@ This is my realization of routing system for websites. The system is similar to 
   If you need change base directory for external file of registration routing you can do this as follows: <br>
     <b>use Service\Router\Router;<br></b>
     <b>(new Router())<br>
-        <i style="padding-left: 40px;"></i>->setRootDirectory('path/to/directory/of/external/files/of/routing')<br>
-        <i style="padding-left: 40px;"></i>->addSourceRoutes('path/to/external/file/with/registration/routes/from/RootDirectory')<br>
-        <i style="padding-left: 40px;"></i>->run();</b>
+        &nbsp->setRootDirectory('path/to/directory/of/external/files/of/routing')<br>
+        &nbsp->addSourceRoutes('path/to/external/file/with/registration/routes/from/RootDirectory')<br>
+        &nbsp->run();</b>
 </p>

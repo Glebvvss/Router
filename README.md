@@ -43,8 +43,31 @@ This is my realization of routing system for websites. The system is similar to 
 
 <p>
   //example of route with optional GET params <br>
-  Router::regRoute('/route/with/#~requiredGetParam;opt#', 'Namespace\Of\UsingClass\ClassName->classMethod');
+  Router::regRoute('/route/with/#~optionalGetParam;opt#', 'Namespace\Of\UsingClass\ClassName->classMethod');
 </p>
 <hr>
 
 <h3><b>Step 3: launching the router</b></h3>
+<p><b>You can launch Router with the help of class named Service\Router\Router or Service\Router\RouterFacade</b></p>
+
+<h5>The syntax for running via the Service\Router\Router</h5>
+<p>
+  <b>use Service\Router\Router;<br><br></b>
+  <b>(new Router())->run();</b>
+</p>
+<p>
+  If you need include external file of registration routing you can do this as follows: <br>
+    <b>use Service\Router\Router;<br><br></b>
+    <b>(new Router())<br>
+        ->addSourceRoutes('path/to/external/file/with/registration/routes/from/the/DOCUMENT_ROOT/directory')<br>
+        ->run();</b>
+</p>
+
+<p>
+  If you need include external file of registration routing you can do this as follows: <br>
+    <b>use Service\Router\Router;<br><br></b>
+    <b>(new Router())<br>
+        ->setRootDirectory('path/to/directory/of/external/files/of/routing')
+        ->addSourceRoutes('path/to/external/file/with/registration/routes/from/RootDirectory')<br>
+        ->run();</b>
+</p>

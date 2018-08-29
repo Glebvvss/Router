@@ -95,17 +95,33 @@ This is my realization of routing system for websites. The system is similar to 
   Simple lauch<br>
   <b>RouterFacade::init()->run();</b><br>
   or<br>
-  RouterFacade::run();
+  <b>RouterFacade::run();</b>
 </p>
 
 <p>
   Lauch with external file of route registration<br>
   <b>
-    RouterFacade::init()
-    &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->addSourceRoutes('path/to/external/file/for/routes/registration')
+    RouterFacade::init()<br>
+    &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->addSourceRoutes('path/to/external/file/for/routes/registration')<br>
     &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->run();
   </b><br>
   or<br>
-  RouterFacade::addSourceRoutes('path/to/external/file/for/routes/registration')->run();
+  <b>RouterFacade::addSourceRoutes('path/to/external/file/for/routes/registration')->run();</b>
+  </b><br>
+</p>
+
+
+<p>
+  Lauch with external file of route registration and rebase of route registration files<br>
+  <b>
+    RouterFacade::init()<br>
+    &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->setRootDirectory('path/to/directory/of/external/files/of/routing')<br>
+    &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->addSourceRoutes('path/to/external/file/for/routes/registration')<br>
+    &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->run();
+  </b><br>
+  or<br>
+  <b>RouterFacade::setRootDirectory('path/to/directory/of/external/files/of/routing')<br>
+    &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->addSourceRoutes('path/to/external/file/for/routes/registration')<br>
+    &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->run();</b>
   </b><br>
 </p>

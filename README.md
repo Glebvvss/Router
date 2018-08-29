@@ -50,7 +50,7 @@ This is my realization of routing system for websites. The system is similar to 
 <h3><b>Step 3: launching the router</b></h3>
 <p>You can launch Router with the help of class named Service\Router\Router or Service\Router\RouterFacade</p>
 
-<h5>The syntax for running via the Service\Router\Router</h5>
+<h3>Running via the Service\Router\Router</h3>
 <br>
 <p>
   <b>(new Router())->run();</b>

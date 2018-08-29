@@ -50,7 +50,7 @@ This is my realization of routing system for websites. The system is similar to 
 <h3><b>Step 3: launching the router</b></h3>
 <p>You can launch Router with the help of class named Service\Router\Router or Service\Router\RouterFacade</p>
 
-<h3>Running via the Service\Router\Router</h3>
+<h4>Running via the Service\Router\Router</h4
 <p>
   Base launch where routes ragistrated in the index file above runner<br>
   <b>(new Router())->run();</b>
@@ -76,4 +76,36 @@ This is my realization of routing system for websites. The system is similar to 
         &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->setRootDirectory('path/to/directory/of/external/files/of/routing')<br>
         &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->addSourceRoutes('path/to/external/file/with/registration/routes/from/RootDirectory')<br>
         &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->run();</b>
+</p>
+
+
+<h4>Running via the Service\Router\RouterFacade</h4>
+
+<p>Launching Router through RouterFacade class is very similar on standard launching through Router, bot have some differences</p>
+
+<p>
+  <b>RouterFacade::init()</b> return object of class <b>Router</b>;
+</p>
+<p>
+  Also <b>RouterFacade::init()</b> contain __callStatic magic method, which allows use all public methods of <b>Router</b> object through static calls
+</p>
+
+<h4>Example</h4>
+<p>
+  Simple lauch<br>
+  <b>RouterFacade::init()->run();</b><br>
+  or<br>
+  RouterFacade::run();
+</p>
+
+<p>
+  Lauch with external file of route registration<br>
+  <b>
+    RouterFacade::init()
+    &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->addSourceRoutes('path/to/external/file/for/routes/registration')
+    &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->run();
+  </b><br>
+  or<br>
+  RouterFacade::addSourceRoutes('path/to/external/file/for/routes/registration')->run();
+  </b><br>
 </p>

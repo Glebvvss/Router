@@ -1,91 +1,88 @@
 # Router
 This is my realization of routing system for websites. The system is similar to Laravel`s routing and RubyOnRails, but if you write your own framework or  project without frameworks with native routing , then this system can help you!
 
-<h2>For initialization of routing in your project you should follow the next steps.</h2>
+For initialization of routing in your project you should follow the next steps.
+================================================================================
 
-<h3><b>Step 1: Clone this repository to your project</b></h3>
-<p>Clone this repository to your project for using routing system</p>
+### Step 1: Clone this repository to your project
+Clone this repository to your project for using routing system
 
 <hr>
 
-<h3><b>Step 2: Registrate routes</b></h3>
-<h5>Syntax of registration</h5>
+### Step 2: Registrate routes
 
-<p>
-  use Service\Router\Router; //include router class to your registration routes file <br>
-  Router::regRoute($routeTemplate, $classAndMEthodOfcontroller); //registration method of Router class <br>
-<p>
+Syntax of registration
 
-<h6>params of above method</h6>
-<p>
-  <b>$routeTemplate</b> - template of route for registration. <br>
+
+    use Service\Router\Router; //include router class to your registration routes file 
+    Router::regRoute($routeTemplate, $classAndMEthodOfcontroller); //registration method of Router class 
+
+
+Params of above method
+
+    $routeTemplate - template of route for registration.
   
-  syntax of GET params inside route template <br>
-  <b>#~nameOfParam#</b> - this is required GET param syntax; <br>
-  <b>#~nameOfParam;opt#</b> - this is optional GET param syntax; <br>
-</p>
+    syntax of GET params inside route template
+    #~nameOfParam# - this is required GET param syntax;
+    #~nameOfParam;opt# - this is optional GET param syntax;
 
-<p>
-  <b>$classAndMEthodOfcontroller</b> - full name of class with namespace and method of this class. <br>
-  <b>-></b> - separator, which white between class name and method name
-</p>
 
-<h5>Example</h5>
-<p>
-  //example of simple route <br>
-  Router::regRoute('/simple/route/without/GET/params', 'Namespace\Of\UsingClass\ClassName->classMethod');
-</p>
+    $classAndMEthodOfcontroller - full name of class with namespace and method of this class.
+    -> - separator, which white between class name and method name
 
-<p>
-  //example of route with required GET params <br>
-  Router::regRoute('/route/with/#~requiredGetParam#', 'Namespace\Of\UsingClass\ClassName->classMethod');
-</p>
 
-<p>
-  //example of route with optional GET params <br>
-  Router::regRoute('/route/with/#~optionalGetParam;opt#', 'Namespace\Of\UsingClass\ClassName->classMethod');
-</p>
+#### Examples
+
+
+    //example of simple route <br>
+    Router::regRoute('/simple/route/without/GET/params', 'Namespace\Of\UsingClass\ClassName->classMethod');
+
+    //example of route with required GET params <br>
+    Router::regRoute('/route/with/#~requiredGetParam#', 'Namespace\Of\UsingClass\ClassName->classMethod');
+
+    //example of route with optional GET params <br>
+    Router::regRoute('/route/with/#~optionalGetParam;opt#', 'Namespace\Of\UsingClass\ClassName->classMethod');
+
 <hr>
 
-<h3><b>Step 3: launching the router</b></h3>
-<p>You can launch Router with the help of class named Service\Router\Router or Service\Router\RouterFacade</p>
+### Step 3: launching the router
+You can launch Router with the help of class named Service\Router\Router or Service\Router\RouterFacade
 
-<h4>Running via the Service\Router\Router</h4
-<p>
-  Base launch where routes ragistrated in the index file above runner<br>
-  <b>(new Router())->run();</b>
-</p>
-<p>
-  If you need include external file of registration routing you can do this as follows: <br>
-    <b>(new Router())<br>
-        &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->addSourceRoutes('path/to/external/file/with/registration/routes/from/the/DOCUMENT_ROOT/directory')<br>
-        &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->run();</b>
-</p>
+#### Running via the Service\Router\Router
 
-<p>
-  Also you can include more than one external files of registration routing if you can do this as follows: <br>
-    <b>(new Router())<br>
-        &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->addSourceRoutes('path/to/external/file/with/registration/routes/from/the/DOCUMENT_ROOT/directory')<br>
-        &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->addSourceRoutes('path/to/another/external/file/with/registration/routes/from/the/DOCUMENT_ROOT/directory')<br>
-        &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->run();</b>
-</p>
+    //Base launch where routes ragistrated in the index file above runner<br>
+    (new Router())->run();
+  
+  <br>
+  
+    //If you need include external file of registration routing you can do this as follows:
+    (new Router())
+        ->addSourceRoutes('path/to/external/file/with/registration/routes/from/the/DOCUMENT_ROOT/directory')
+        ->run();        
+        
+  <br>
+  
+    //Also you can include more than one external files of registration routing if you can do this as follows:
+    (new Router())
+        ->addSourceRoutes('path/to/external/file/with/registration/routes/from/the/DOCUMENT_ROOT/directory')
+        ->addSourceRoutes('path/to/another/external/file/with/registration/routes/from/the/DOCUMENT_ROOT/directory')
+        ->run();
+        
+  <br>
 
-<p>
-  If you need change base directory for external files of registration routing you can do this as follows: <br>
-    <b>(new Router())<br>
-        &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->setRootDirectory('path/to/directory/of/external/files/of/routing')<br>
-        &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->addSourceRoutes('path/to/external/file/with/registration/routes/from/RootDirectory')<br>
-        &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->run();</b>
-</p>
+    //If you need change base directory for external files of registration routing you can do this as follows: <br>
+    (new Router())
+        ->setRootDirectory('path/to/directory/of/external/files/of/routing')
+        ->addSourceRoutes('path/to/external/file/with/registration/routes/from/RootDirectory')
+        ->run();
+
+#### Running via the Service\Router\RouterFacade
+
+Launching Router through RouterFacade class is very similar on standard launching through Router, bot have some differences
 
 
-<h4>Running via the Service\Router\RouterFacade</h4>
-
-<p>Launching Router through RouterFacade class is very similar on standard launching through Router, bot have some differences</p>
-
-<p>
-  <b>RouterFacade::init()</b> return object of class <b>Router</b>;
-</p>
+**RouterFacade::init()** return object of class **Router**
+  
 <p>
   Also <b>RouterFacade::init()</b> contain __callStatic magic method, which allows use all public methods of <b>Router</b> object through static calls
 </p>

@@ -15,13 +15,13 @@ class Router implements IRouter {
 	protected static $regExpOfGetParam 		   = '#~[a-zA-Z]+#';
 	protected static $regExpOfOptionalGetParam = '#~[a-zA-Z]+;opt#';
 
-	protected static $rootDirectory;
 	protected static $routeList;
 
+	protected $rootDirectory;
 	protected $currentRoute;
 
 	public function __construct() {
-		self::$rootDirectory = $_SERVER['DOCUMENT_ROOT'];
+		$this->rootDirectory = $_SERVER['DOCUMENT_ROOT'];
 		$this->currentRoute = $_SERVER['REQUEST_URI'];
 	}
 
@@ -43,7 +43,7 @@ class Router implements IRouter {
 	}
 
 	public function setRootDirectory( $nonDefaultRootDirectory ) {
-		self::$rootDirectory = $nonDefaultRootDirectory;
+		$this->rootDirectory = $nonDefaultRootDirectory;
 		return $this;
 	}
 

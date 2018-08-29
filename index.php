@@ -3,8 +3,8 @@
 require_once 'vendor/autoload.php';
 
 use Service\Router\RouterFacade;
+use Service\Router\Router;
 
 RouterFacade::init()
-	->setRootDirectory( $_SERVER['DOCUMENT_ROOT'] . '/app/Routes' )
-	->addSourceRoutes('Main.php')
+	->addSourceRoutes('app/Routes/Main.php')
 	->run();

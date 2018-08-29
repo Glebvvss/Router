@@ -11,7 +11,7 @@ class Router implements IRouter {
 
 	use TEscapingBackSlashesRegExp;
 
-	protected static $controllerSeparator 	   = '|';
+	protected static $controllerSeparator 	   = '->';
 	protected static $regExpOfGetParam 		   = '#~[a-zA-Z]+#';
 	protected static $regExpOfOptionalGetParam = '#~[a-zA-Z]+;opt#';
 
@@ -48,7 +48,7 @@ class Router implements IRouter {
 	}
 
 	public function addSourceRoutes( $pathToRegistrationRoutesFile ) {
-		include_once self::$rootDirectory . '/' . $pathToRegistrationRoutesFile;
+		include_once $this->rootDirectory . '/' . $pathToRegistrationRoutesFile;
 		return $this;
 	}
 
@@ -124,7 +124,7 @@ class Router implements IRouter {
 		$attribute = $this->removeSpecialSymbolsFromAttributes( $attribute );
 
 		if ( $value ) {
-			$_GET[$attribute] = $value;
+			$_GET['Route'][$attribute] = $value;
 		}
 	}
 

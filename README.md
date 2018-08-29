@@ -59,15 +59,15 @@ This is my realization of routing system for websites. The system is similar to 
   If you need include external file of registration routing you can do this as follows: <br>
     <b>use Service\Router\Router;<br></b>
     <b>(new Router())<br>
-        <i>    </i>->addSourceRoutes('path/to/external/file/with/registration/routes/from/the/DOCUMENT_ROOT/directory')<br>
-        <i>    </i>->run();</b>
+        &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->addSourceRoutes('path/to/external/file/with/registration/routes/from/the/DOCUMENT_ROOT/directory')<br>
+        &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->run();</b>
 </p>
 
 <p>
   If you need change base directory for external file of registration routing you can do this as follows: <br>
     <b>use Service\Router\Router;<br></b>
     <b>(new Router())<br>
-        &nbsp&nbsp&nbsp&nbsp->setRootDirectory('path/to/directory/of/external/files/of/routing')<br>
-        &nbsp&nbsp&nbsp&nbsp->addSourceRoutes('path/to/external/file/with/registration/routes/from/RootDirectory')<br>
-        &nbsp&nbsp&nbsp&nbsp->run();</b>
+        &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->setRootDirectory('path/to/directory/of/external/files/of/routing')<br>
+        &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->addSourceRoutes('path/to/external/file/with/registration/routes/from/RootDirectory')<br>
+        &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->run();</b>
 </p>

@@ -55,16 +55,12 @@ You can launch Router with the help of class named Service\Router\Router or Serv
     (new Router())
         ->addSourceRoutes('path/to/external/file/with/registration/routes/from/the/DOCUMENT_ROOT/directory')
         ->run();        
-        
-  <br>
   
     //Also you can include more than one external files of registration routing if you can do this as follows:
     (new Router())
         ->addSourceRoutes('path/to/external/file/with/registration/routes/from/the/DOCUMENT_ROOT/directory')
         ->addSourceRoutes('path/to/another/external/file/with/registration/routes/from/the/DOCUMENT_ROOT/directory')
         ->run();
-        
-  <br>
 
     //If you need change base directory for external files of registration routing you can do this as follows:
     (new Router())

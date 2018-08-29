@@ -1,8 +1,7 @@
 # Router
 This is my realization of routing system for websites. The system is similar to Laravel`s routing and RubyOnRails, but if you write your own framework or  project without frameworks with native routing , then this system can help you!
 
-For initialization of routing in your project you should follow the next steps.
-================================================================================
+### For initialization of routing in your project you should follow the next steps.
 
 ### Step 1: Clone this repository to your project
 Clone this repository to your project for using routing system

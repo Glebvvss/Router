@@ -11,14 +11,12 @@ Clone this repository to your project for using routing system
 
 ### Step 2: Registrate routes
 
-Syntax of registration
-
+#### Syntax of registration
 
     use Service\Router\Router; //include router class to your registration routes file 
     Router::regRoute($routeTemplate, $classAndMEthodOfcontroller); //registration method of Router class 
 
-
-Params of above method
+#### Params of above method
 
     $routeTemplate - template of route for registration.
   
@@ -30,9 +28,7 @@ Params of above method
     $classAndMEthodOfcontroller - full name of class with namespace and method of this class.
     -> - separator, which white between class name and method name
 
-
 #### Examples
-
 
     //example of simple route <br>
     Router::regRoute('/simple/route/without/GET/params', 'Namespace\Of\UsingClass\ClassName->classMethod');
@@ -70,55 +66,46 @@ You can launch Router with the help of class named Service\Router\Router or Serv
         
   <br>
 
-    //If you need change base directory for external files of registration routing you can do this as follows: <br>
+    //If you need change base directory for external files of registration routing you can do this as follows:
     (new Router())
         ->setRootDirectory('path/to/directory/of/external/files/of/routing')
-        ->addSourceRoutes('path/to/external/file/with/registration/routes/from/RootDirectory')
+        ->addSourceRoutes('path/to/external/file/with/registration/routes/from/RootDir')
         ->run();
 
 #### Running via the Service\Router\RouterFacade
 
-Launching Router through RouterFacade class is very similar on standard launching through Router, bot have some differences
+**Launching Router through RouterFacade class is very similar on standard launching through Router, bot have some differences**
 
-
-**RouterFacade::init()** return object of class **Router**
+    RouterFacade::init() return object of class Router
   
-<p>
-  Also <b>RouterFacade::init()</b> contain __callStatic magic method, which allows use all public methods of <b>Router</b> object through static calls
-</p>
+Also **RouterFacade::init()** contain **__callStatic** magic method, which allows use all public methods of **Router** object through static calls
 
-<h4>Example</h4>
-<p>
-  Simple lauch<br>
-  <b>RouterFacade::init()->run();</b><br>
-  or<br>
-  <b>RouterFacade::run();</b>
-</p>
+#### Example
 
-<p>
-  Lauch with external file of route registration<br>
-  <b>
-    RouterFacade::init()<br>
-    &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->addSourceRoutes('path/to/external/file/for/routes/registration')<br>
-    &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->run();
-  </b><br>
-  or<br>
-  <b>RouterFacade::addSourceRoutes('path/to/external/file/for/routes/registration')->run();</b>
-  </b><br>
-</p>
+    //Simple lauch
+    RouterFacade::init()->run();
+    //or
+    RouterFacade::run();
+    
+<br>
+  
+    //Lauch with external file of route registration
+    RouterFacade::init()
+        ->addSourceRoutes('path/to/external/file/for/routes/registration')
+        ->run();
+    //or
+    RouterFacade::addSourceRoutes('path/to/external/file/for/routes/registration')->run();
+    
+<br>
 
-
-<p>
-  Lauch with external file of route registration and rebase of route registration files<br>
-  <b>
-    RouterFacade::init()<br>
-    &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->setRootDirectory('path/to/directory/of/external/files/of/routing')<br>
-    &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->addSourceRoutes('path/to/external/file/for/routes/registration')<br>
-    &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->run();
-  </b><br>
-  or<br>
-  <b>RouterFacade::setRootDirectory('path/to/directory/of/external/files/of/routing')<br>
-    &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->addSourceRoutes('path/to/external/file/for/routes/registration')<br>
-    &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp->run();</b>
-  </b><br>
-</p>
+    //Lauch with external file of route registration and rebase of route registration files<br>
+    RouterFacade::init()
+        ->setRootDirectory('path/to/directory/of/external/files/of/routing')
+        ->addSourceRoutes('path/to/external/file/for/routes/registration')
+        ->run();
+    //or
+    RouterFacade::setRootDirectory('path/to/directory/of/external/files/of/routing')
+        ->addSourceRoutes('path/to/external/file/for/routes/registration')
+        ->run();
+        
+<br>

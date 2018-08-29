@@ -64,7 +64,7 @@ You can launch Router with the help of class named Service\Router\Router or Serv
 
     //If you need change base directory for external files of registration routing you can do this as follows:
     (new Router())
-        ->setRootDirectory('path/to/directory/of/external/files/of/routing')
+        ->setRootDirectory('path/to/directory/of/external/files/of/routing')//by default equals $_SERVER['DOCUMENT_ROOT']
         ->addSourceRoutes('path/to/external/file/with/registration/routes/from/RootDir')
         ->run();
 

@@ -12,7 +12,7 @@ class Router implements IRouter {
 	use TEscapingBackSlashesRegExp;
 
 	protected static $controllerSeparator 	   = '->';
-	protected static $regExpOfGetParam 		   = '#~[a-zA-Z]+#';
+	protected static $regExpOfGetParam         = '#~[a-zA-Z]+#';
 	protected static $regExpOfOptionalGetParam = '#~[a-zA-Z]+;opt#';
 
 	protected static $routeList;
@@ -89,15 +89,15 @@ class Router implements IRouter {
 
 	protected function takeGetTypeParamsByRoute( string $currentRouteTpl ) {
 		$currentRoute = $this->currentRoute;
-		$countParams = preg_match_all( '/'.$this->makeRegExpForGetPrams().'/' , $currentRouteTpl, $attributes );
+		$countParams = preg_match_all( '/'.$this->makeRegExpForGetParams().'/' , $currentRouteTpl, $attributes );
 
 		$counter = 0;
 		while( $counter < $countParams ) {
 			$prefix = strstr( $currentRouteTpl, $attributes[0][$counter], true );
 
 			$countSymbolsToCutFromStart = strlen($prefix) + strlen($attributes[0][$counter]);
-			$currentRouteTpl 			= substr( $currentRouteTpl, $countSymbolsToCutFromStart );
-			$currentRoute 	 			= substr( $currentRoute, strlen($prefix) );
+			$currentRouteTpl            = substr( $currentRouteTpl, $countSymbolsToCutFromStart );
+			$currentRoute               = substr( $currentRoute, strlen($prefix) );
 
 			if ( ($counter + 1) == $countParams ) {
 				if ( $currentRouteTpl != null ) {
@@ -116,7 +116,7 @@ class Router implements IRouter {
 		}
 	}
 
-	private function makeRegExpForGetPrams() {
+	private function makeRegExpForGetParams() {
 		return '(' . self::$regExpOfGetParam . '|' . self::$regExpOfOptionalGetParam . ')';
 	}
 

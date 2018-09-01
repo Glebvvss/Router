@@ -106,7 +106,7 @@ class Router implements IRouter {
 					$paramValue = $currentRoute;
 				}
 			} else {
-				$postfix 	  = strstr( $currentRouteTpl, $attributes[0][$counter + 1], true );
+				$postfix      = strstr( $currentRouteTpl, $attributes[0][$counter + 1], true );
 				$paramValue   = strstr( $currentRoute, $postfix, true );
 				$currentRoute = substr( $currentRoute, strlen($paramValue) );
 			}
